@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO - Search Engine Optmization -->
+    <meta name="keywords" content="Gerador de senhas">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- importando css -->
+    <link rel="stylesheet" href="./assets/styles/password.css">
+    <!-- importando js -->
+    <script src="./assets/js/generator-password.js" defer></script>
+    <title>Gerador de Senha - SENAI-SP</title>
+</head>
+<body>
+    
+    <!-- Container principal que envolve toda a aplicação do gerador de senha -->
+    <section class="password-generator">
+
+        <!-- Cabeçalho dinâmico que exibe a data/hora atual e mensagem de boas-vindas -->
+        <header class="password-generator__header">
+
+            <span class="password-generator__datetime"></span>
+            <span class="password-generator__welcome"></span>
+
+        </header><!--password-generator__header-->
+
+        <!-- Área principal que contém todos os elementos interativos do gerador -->
+        <main class="password-generator__main">
+
+            <!-- Logo do gerador de senhas -->
+            <img class="password-generator__logo" src="./assets/img/logo-senai-sp.png" alt="Logo SENAI-SP" />
+
+            <!-- Container de entrada que agrupa o controle deslizante e opções de senha -->
+            <div class="password-generator__input">
+
+                <!-- Exibição do tamanho selecionado da senha -->
+                <span class="password-generator__text">Tamanho <span class="password-generator__size"></span>caracteres</span>
+
+                <!-- Controle deslizante para selecionar o tamanho da senha -->
+                <input class="password-generator__slider" type="range" min="8" max="16" value="8" />
+
+                <!-- Grupo de opções para personalização da senha -->
+                <div class="password-generator__options">
+
+                    <!-- Opções para incluir letras maiúsculas -->
+                    <label class="password-generator__option" name="uppercase-label">
+
+                        <input type="checkbox" class="generator-password__checkbox uppercase-check" name="uppercase" checked>
+                        Letras maiúsculas (A-Z)
+
+                    </label><!--password-generator__option-->
+
+                    <!-- Opções para incluir letras minúsculas -->
+                    <label class="password-generator__option" name="lowercase-label">
+
+                        <input type="checkbox" class="generator-password__checkbox lowercase-check" name="lowercase" checked>
+                        Letras minúsculas (a-z)
+
+                    </label><!--password-generator__option-->
+
+                    <!-- Opções para incluir números -->
+                    <label class="password-generator__option" name="numbers-label">
+
+                        <input type="checkbox" class="generator-password__checkbox numbers-check" name="numbers" checked>
+                        Números (0-9)
+
+                    </label><!--password-generator__option-->
+
+                    <!-- Opções para incluir caracteres especiais -->
+                    <label class="password-generator__option" name="special-label">
+
+                        <input type="checkbox" class="generator-password__checkbox special-check" name="special" checked>
+                        Caracteres especiais (!@#$%&*)
+
+                    </label><!--password-generator__option-->
+
+                </div><!--password-generator__options-->
+
+            </div><!--password-generator__input-->
+
+            <!-- Container que exibe a senha gerada e permite cópia -->
+            <div class="password-generator__result hide">
+
+
+
+            </div><!--password-generator__result hide-->
+
+            <!-- Container que mantém o histórico das ultimas senhas geradas -->
+            <div class="password-generator__history">
+
+
+
+            </div><!--password-generator__history-->
+
+        </main><!--password-generator__main-->
+
+    </section><!--password-generator-->
+
+</body>
+</html>
