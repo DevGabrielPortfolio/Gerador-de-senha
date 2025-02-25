@@ -79,4 +79,25 @@ const generatePassword = () => {
     }
 
     let pass = '';
-}
+
+    for (let i = 0; i < sliderElement.value; ++i){
+        pass += selectedCharset.charAt(Math.floor(Math.random() * selectedCharset.length));
+    }
+
+    containerPassword.classList.remove('hide');
+    password.innerHTML = pass;
+    novaSenha = pass;
+
+    historicoSenhas.unshift(pass);
+
+    if(historicoSenhas.length > 3){
+        historicoSenhas.pop();
+    }
+
+    const historico = document.querySelector('.password-generator__history');
+    if (historico){
+        historico.style.display = 'block';
+
+        historico.querySelector('.password-generator__history-list').innerHTML = historicoSenhas.map(senha => `<li class="password-generator__history-item">${senha}</li>`).join('');
+    }
+};
