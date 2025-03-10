@@ -101,3 +101,37 @@ const generatePassword = () => {
         historico.querySelector('.password-generator__history-list').innerHTML = historicoSenhas.map(senha => `<li class="password-generator__history-item">${senha}</li>`).join('');
     }
 };
+
+const copyPassword = () =>{
+    alert('Senha copiada com sucesso!');
+    navigator.clipboard.writeText(novaSenha);
+}
+
+
+buttonElement.addEventListener('click', generatePassword);
+
+containerPassword.addEventListener('click', copyPassword);
+
+
+const clearButton = document.querySelector('.password-generator__button--clear');
+
+const clearData = ()=>{
+    historicoSenhas = [];
+    novaSenha = '';
+
+    containerPassword.classList.add('hide');
+    const historico = document.querySelector('.password-generator__history');
+    if(historico){
+        historico.style.display = 'none';
+    }
+
+    document.querySelector('.uppercase-check').checked = true;
+    document.querySelector('.lowercase-check').checked = true;
+    document.querySelector('.numbers-check').checked = true;
+    document.querySelector('.special-check').checked = true;
+
+    sliderElement.value = 8;
+    sizePassword.innerHTML = '8';
+};
+
+clearButton.addEventListener('click', clearData);
